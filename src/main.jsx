@@ -3,21 +3,29 @@ import ReactDOM from "react-dom/client";
 import "./index.scss";
 import {
   createBrowserRouter,
-  createRoutesFromElements,
-  Route,
+  // createRoutesFromElements,
+  // Route,
   RouterProvider,
 } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
 import { About } from "./pages/About/About";
+import { ApiProvider } from "./ApiProvider";
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-  <>
-  <Route path="/" element={<Home />} />
-  <Route path="/about" element={<About />} />
-  </>
-)
-);
+const router = createBrowserRouter([
+  {
+    element: <ApiProvider />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+    ],
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>

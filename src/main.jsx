@@ -8,8 +8,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
-import { About } from "./pages/About/About";
 import { ApiProvider } from "./ApiProvider";
+import { Cart } from "./pages/Cart/Cart";
+import { Favorites } from "./pages/Favorites/Favorites";
+import { Notification } from "./pages/Notification/Notification";
 
 const router = createBrowserRouter([
   {
@@ -20,8 +22,16 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "about",
-        element: <About />,
+        path: "cart",
+        element: <Cart />,
+      },
+      {
+        path: "favorites",
+        element: <Favorites />,
+      },
+      {
+        path: "notification",
+        element: <Notification />,
       },
     ],
   },

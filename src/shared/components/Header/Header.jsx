@@ -1,19 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import "/src/shared/components/Header/Header.scss";
 import { HeaderMenu } from "./components/HeaderMenu/HeaderMenu";
+import { getPageTitleFromPath } from "../../ui/PageTitle/PageTitle";
 
 export const Header = () => {
-  const [navIsActive, SetNavIsActive] = useState(false);
+  const [navIsActive, setNavIsActive] = useState(false);
+  const [pageTitle, setPageTitle] = useState("");
+  const location = useLocation();
+
+  useEffect(() => {
+    const title = getPageTitleFromPath(location.pathname);
+    setPageTitle(title);
+  }, [location.pathname]);
+
   return (
     <div className="header">
-      <div className="menu" onClick={() => SetNavIsActive(true)}>
-        <span class="icon-menu"></span>
+      <div className="menu" onClick={() => setNavIsActive(true)}>
+        <span className="icon-menu"></span>
       </div>
-      <div className="page-title"></div>
+      <div className="page-title">{pageTitle}</div>
       <div className="user">
         <span className="icon-coffee"></span>
       </div>
-      <HeaderMenu navIsActive={navIsActive} navClose={() => SetNavIsActive(false)} />
+      <HeaderMenu navIsActive={navIsActive} navClose={() => setNavIsActive(false)} />
     </div>
   );
 };

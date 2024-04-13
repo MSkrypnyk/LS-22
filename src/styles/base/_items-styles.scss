@@ -6,7 +6,8 @@
   overflow-x: auto;
   padding-bottom: 15rem;
   @include desktop-small {
-    gap: 50rem;
+    gap: 60rem;
+    
   }
 }
 .item {
@@ -16,7 +17,7 @@
   flex-direction: column;
   padding: 12rem 12rem 22rem 12rem;
   flex: 1 0 149rem;
-  
+  max-width: 149rem;
 
   &__img {
     margin-bottom: 10rem;

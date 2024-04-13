@@ -4,7 +4,7 @@ html {
     font-size: 1.2px;
   }
   @include desktop-small {
-    font-size: 1.4px;
+    font-size:1.4px;
   }
 }
 html,
@@ -27,6 +27,7 @@ body {
 
 .main {
   overflow-y: auto;
+  padding: 0 30rem;
 }
 
 .btn {
@@ -45,3 +46,4 @@ a {
   font-size: 20rem;
   line-height: 180%;
 }
+

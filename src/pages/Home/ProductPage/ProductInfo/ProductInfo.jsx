@@ -24,8 +24,8 @@ export const ProductInfo = () => {
     title: "Robusta Beans",
     desc: "From Africa",
     rating: 4.5,
-    ratingCount: '6,879',
-    beanRoasted: 'Medium Roasted',
+    ratingCount: "6,879",
+    beanRoasted: "Medium Roasted",
   };
 
   return (
@@ -53,7 +53,9 @@ export const ProductInfo = () => {
               <span className="icon-location"></span>Milk
             </div>
           </div>
-          <p className="product-bean__roasted bean-content">{product.beanRoasted}</p>
+          <p className="product-bean__roasted bean-content">
+            {product.beanRoasted}
+          </p>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { useState, useRef } from "react";
 import "./SearchInput.scss";
+import { Button } from "../Button/Button";
 
 export const SearchInput = ({ onSubmit }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -18,9 +19,9 @@ export const SearchInput = ({ onSubmit }) => {
 
   return (
     <form className="form" onSubmit={handleSearchSubmit}>
-      <button type="submit" className="btn form__btn">
+      <Button type="submit" variant="secondary">
         <span className="icon-search"></span>
-      </button>
+      </Button>
       <input
         id="searchInput"
         className="form__input"

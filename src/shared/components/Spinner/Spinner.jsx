@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./Spinner.scss";
 import spinnerImage from "/src/assets/img/spinner.png";
+import "/src/animation/animation.scss";
+
 
 export const Spinner = () => {
   const [loading, setLoading] = useState(true);
@@ -8,7 +10,7 @@ export const Spinner = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 700);
     return () => clearTimeout(timer);
   }, []);
 

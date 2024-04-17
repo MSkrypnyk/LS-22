@@ -1,8 +1,9 @@
-import { SearchInput } from "../../shared/ui/Input/SearchInput";
+import { SearchInput } from "../../shared/ui/SearchInput/SearchInput";
 import "./Home.scss";
 import { CategoriesNav } from "./components/CategoriesNav/CategoriesNav";
 import { CoffeeBeans } from "./components/CoffeBeans/CoffeBeans";
 import { Coffee } from "./components/Coffee/Coffee";
+
 
 export const Home = () => {
   const handleSearchSubmit = (searchTerm) => {

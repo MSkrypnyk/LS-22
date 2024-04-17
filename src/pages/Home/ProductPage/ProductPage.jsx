@@ -1,10 +1,13 @@
-
-
-import { ProductInfo } from './ProductInfo/ProductInfo';
-
+import { Spinner } from "../../../shared/components/Spinner/Spinner";
+import { ProductDetails } from "./ProductDetails/ProductDetails";
+import { ProductInfo } from "./ProductInfo/ProductInfo";
 
 export const ProductPage = () => {
- return (
-   <ProductInfo/>
+  return (
+    <>
+      <Spinner />
+      <ProductInfo />
+      <ProductDetails />
+    </>
   );
 };

@@ -1,8 +1,7 @@
 import { useState } from "react";
 import "./CoffeBeans.scss";
 import { Link } from "react-router-dom";
-
-export const CoffeeBeans = () => {
+export const CoffeeBeans = ({ selectedCategory }) => {
   const [price] = useState(4.2);
 
   const coffeeData = [
@@ -11,32 +10,41 @@ export const CoffeeBeans = () => {
       title: "Robusta Beans",
       desc: "Medium Roasted",
       id: 4,
+      category: "cappuccino",
     },
     {
       image: "/src/assets/img/home/beans2.png",
-      title: "Cappuccino",
-      desc: "With Steamed Milk",
+      title: "Arabica Beans",
+      desc: "Light Roasted",
       id: 5,
+      category: "espresso",
     },
     {
       image: "/src/assets/img/home/beans3.png",
-      title: "Cappuccino",
-      desc: "With Steamed Milk",
+      title: "Espresso Beans",
+      desc: "Dark Roasted",
       id: 6,
+      category: "espresso",
     },
     {
       image: "/src/assets/img/home/beans4.png",
-      title: "Cappuccino",
-      desc: "With Steamed Milk",
+      title: "Flavored Beans",
+      desc: "Various Flavors",
       id: 7,
+      category: "americano",
     },
   ];
+
+  const filteredCoffeeData =
+    selectedCategory === "all"
+      ? coffeeData
+      : coffeeData.filter((item) => item.category === selectedCategory);
 
   return (
     <div>
       <h5 className="beans-title">Coffee beans</h5>
       <div className="list">
-        {coffeeData.map((item) => (
+        {filteredCoffeeData.map((item) => (
           <Link to={`/product/${item.id}`} className="item" key={item.id}>
             <img src={item.image} className="item__img" alt="Coffee" />
             <h3 className="item__title">{item.title}</h3>

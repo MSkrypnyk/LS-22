@@ -75,7 +75,7 @@
   }
   .selected {
     color: var(--c-primary);
-    border: 2px solid var(--c-primary);
+    outline: 2px solid var(--c-primary);
     transition: var(--transition);
   }
 

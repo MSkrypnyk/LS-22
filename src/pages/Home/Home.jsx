@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { SearchInput } from "../../shared/ui/SearchInput/SearchInput";
 import "./Home.scss";
 import { CategoriesNav } from "./components/CategoriesNav/CategoriesNav";
@@ -6,6 +7,7 @@ import { Coffee } from "./components/Coffee/Coffee";
 
 
 export const Home = () => {
+  const [activeCategory, setActiveCategory] = useState('all');
   const handleSearchSubmit = (searchTerm) => {
     console.log("Searching for:", searchTerm);
   };
@@ -17,9 +19,9 @@ export const Home = () => {
         coffee for you
       </h1>
       <SearchInput onSubmit={handleSearchSubmit} />
-      <CategoriesNav />
-      <Coffee />
-      <CoffeeBeans />
+      <CategoriesNav setActiveCategory={setActiveCategory}/>
+      <Coffee  selectedCategory={activeCategory} />
+      <CoffeeBeans  selectedCategory={activeCategory} />
     </section>
   );
 };

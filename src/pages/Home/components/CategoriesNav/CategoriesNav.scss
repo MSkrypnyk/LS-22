@@ -1,3 +1,4 @@
+@import '/src/styles/helpers/mixins.scss'; 
 .categories-ul {
   display: flex;
   gap: 19rem;
@@ -5,6 +6,9 @@
   margin-bottom: 22rem;
   padding-bottom: 15rem;
   overflow-x: auto;
+  @include desktop-small {
+    gap: 50rem;
+  }
 }
 
 .categories-a {

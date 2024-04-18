@@ -10,7 +10,7 @@ export const Spinner = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 700);
+    }, 300);
     return () => clearTimeout(timer);
   }, []);
 

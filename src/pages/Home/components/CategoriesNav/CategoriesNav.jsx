@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 export const CategoriesNav = ({ setActiveCategory }) => {
   const [activeCategory, setActiveCategoryLocal] = useState("all");
 
-  const handleCategoryClick = (category) => {
+  const handleCategoryClick = (e, category) => {
+    e.preventDefault();
     setActiveCategoryLocal(category);
     setActiveCategory(category);
   };
@@ -19,7 +20,7 @@ export const CategoriesNav = ({ setActiveCategory }) => {
             className={`categories-a ${
               activeCategory === "all" ? "active-link" : ""
             }`}
-            onClick={() => handleCategoryClick("all")}
+            onClick={(e) => handleCategoryClick(e, "all")}
           >
             All
           </Link>
@@ -30,7 +31,7 @@ export const CategoriesNav = ({ setActiveCategory }) => {
             className={`categories-a ${
               activeCategory === "cappuccino" ? "active-link" : ""
             }`}
-            onClick={() => handleCategoryClick("cappuccino")}
+            onClick={(e) => handleCategoryClick(e, "cappuccino")}
           >
             Cappuccino
           </Link>
@@ -41,7 +42,7 @@ export const CategoriesNav = ({ setActiveCategory }) => {
             className={`categories-a ${
               activeCategory === "espresso" ? "active-link" : ""
             }`}
-            onClick={() => handleCategoryClick("espresso")}
+            onClick={(e) => handleCategoryClick(e, "espresso")}
           >
             Espresso
           </Link>
@@ -52,7 +53,7 @@ export const CategoriesNav = ({ setActiveCategory }) => {
             className={`categories-a ${
               activeCategory === "americano" ? "active-link" : ""
             }`}
-            onClick={() => handleCategoryClick("americano")}
+            onClick={(e) => handleCategoryClick(e, "americano")}
           >
             Americano
           </Link>
@@ -63,7 +64,7 @@ export const CategoriesNav = ({ setActiveCategory }) => {
             className={`categories-a ${
               activeCategory === "macchiato" ? "active-link" : ""
             }`}
-            onClick={() => handleCategoryClick("macchiato")}
+            onClick={(e) => handleCategoryClick(e, "macchiato")}
           >
             Macchiato
           </Link>
